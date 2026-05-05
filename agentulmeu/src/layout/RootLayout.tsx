@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Settings as SettingsIcon, LayoutDashboard, Wand2 } from 'lucide-react'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="text-xl">🦞</span>
             <span className="font-semibold">AgentulMeu</span>
-          </div>
+          </Link>
           <div className="flex items-center gap-3">
             <Badge variant="outline" className="gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <main className="flex-1 pt-14 pb-20 md:pb-6">
         <div className="container mx-auto px-4 py-6">
-          {children}
+          <Outlet />
         </div>
       </main>
 
