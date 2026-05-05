@@ -1,5 +1,32 @@
+# Dependencies
 node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Build outputs
 dist/
-.env
-.env.*
+build/
 *.log
+
+# Environment
+.env*.local
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PM2
+*.pid
+*.log
+pm2/
+
+# Secrets - NICIODATĂ nu commita token-uri reale!
+*.pem
+*.key
